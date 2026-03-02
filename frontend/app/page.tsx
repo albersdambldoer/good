@@ -1,4 +1,19 @@
+"use client";
+
+import { useEffect, useState } from "react";
+import { api } from "../lib/apiClient";
+
 export default function Home() {
+  const [apiStatus, setApiStatus] = useState<"checking" | "ok" | "error">(
+    "checking",
+  );
+
+  useEffect(() => {
+    api<{ status: string }>("/health")
+      .then(() => setApiStatus("ok"))
+      .catch(() => setApiStatus("error"));
+  }, []);
+
   return (
     <div className="min-h-screen bg-zinc-950 text-zinc-50">
       <div className="mx-auto flex h-screen max-w-5xl flex-col px-6 py-8">
@@ -50,8 +65,22 @@ export default function Home() {
                 <span className="font-medium text-zinc-300">
                   Your next resume
                 </span>
-                <span className="rounded-full bg-zinc-800 px-2 py-0.5 text-[10px] uppercase tracking-wide">
-                  Preview
+                <span
+                  className="rounded-full px-2 py-0.5 text-[10px] uppercase tracking-wide"
+                  style={{
+                    backgroundColor:
+                      apiStatus === "ok"
+                        ? "rgb(22, 163, 74)"
+                        : apiStatus === "error"
+                          ? "rgb(220, 38, 38)"
+                          : "rgb(39, 39, 42)",
+                  }}
+                >
+                  {apiStatus === "checking"
+                    ? "Checking API..."
+                    : apiStatus === "ok"
+                      ? "API online"
+                      : "API offline"}
                 </span>
               </div>
               <div className="mt-4 space-y-3 rounded-xl bg-zinc-950/60 p-4 text-xs text-zinc-300">
