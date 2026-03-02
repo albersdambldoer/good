@@ -9,6 +9,22 @@
     "start": "node dist/server.js",
     "lint": "echo \"No linter configured\""
   },
+  "dependencies": {
+    "bcrypt": "*",
+    "cors": "*",
+    "dotenv": "*",
+    "express": "*",
+    "jsonwebtoken": "*",
+    "mongoose": "*"
+  },
+  "devDependencies": {
+    "@types/bcrypt": "*",
+    "@types/express": "*",
+    "@types/jsonwebtoken": "*",
+    "@types/node": "*",
+    "ts-node-dev": "*",
+    "typescript": "*"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
