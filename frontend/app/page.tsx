@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useEffect, useState } from "react";
 import { api } from "../lib/apiClient";
 
@@ -27,12 +28,18 @@ export default function Home() {
             </span>
           </div>
           <div className="flex gap-3 text-sm">
-            <button className="rounded-full border border-zinc-700 px-4 py-1.5 font-medium text-zinc-200 hover:border-zinc-500 hover:bg-zinc-900">
+            <Link
+              href="/auth/login"
+              className="rounded-full border border-zinc-700 px-4 py-1.5 font-medium text-zinc-200 hover:border-zinc-500 hover:bg-zinc-900"
+            >
               Sign in
-            </button>
-            <button className="rounded-full bg-indigo-500 px-4 py-1.5 font-medium text-zinc-50 hover:bg-indigo-400">
+            </Link>
+            <Link
+              href="/auth/signup"
+              className="rounded-full bg-indigo-500 px-4 py-1.5 font-medium text-zinc-50 hover:bg-indigo-400"
+            >
               Get started
-            </button>
+            </Link>
           </div>
         </header>
 
