@@ -1,9 +1,9 @@
 import express from "express";
 import cors from "cors";
-import { authRouter } from "./routes/authRoutes.js";
-import { profileRouter } from "./routes/profileRoutes.js";
-import { resumeRouter } from "./routes/resumeRoutes.js";
-import { adminRouter } from "./routes/adminRoutes.js";
+import { authRouter } from "./routes/authRoutes";
+import { profileRouter } from "./routes/profileRoutes";
+import { resumeRouter } from "./routes/resumeRoutes";
+import { adminRouter } from "./routes/adminRoutes";
 
 export const app = express();
 

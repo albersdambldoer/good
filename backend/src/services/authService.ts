@@ -1,8 +1,8 @@
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
-import { User, type UserDocument } from "../models/User.js";
-import { env } from "../config/env.js";
-import { UserActionLog } from "../models/UserActionLog.js";
+import { User, type UserDocument } from "../models/User";
+import { env } from "../config/env";
+import { UserActionLog } from "../models/UserActionLog";
 
 interface SignUpParams {
   email: string;

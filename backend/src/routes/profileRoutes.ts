@@ -1,6 +1,6 @@
 import { Router } from "express";
-import { authMiddleware, type AuthRequest } from "../middleware/auth.js";
-import { UserActionLog } from "../models/UserActionLog.js";
+import { authMiddleware, type AuthRequest } from "../middleware/auth";
+import { UserActionLog } from "../models/UserActionLog";
 
 export const profileRouter = Router();
 

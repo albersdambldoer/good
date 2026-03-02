@@ -1,5 +1,5 @@
 import type { Response, NextFunction } from "express";
-import type { AuthRequest } from "./auth.js";
+import type { AuthRequest } from "./auth";
 
 export function requireRole(role: "admin") {
   return (req: AuthRequest, res: Response, next: NextFunction) => {

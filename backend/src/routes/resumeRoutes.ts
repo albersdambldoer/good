@@ -1,7 +1,7 @@
 import { Router } from "express";
-import { authMiddleware, type AuthRequest } from "../middleware/auth.js";
-import { Resume } from "../models/Resume.js";
-import { UserActionLog } from "../models/UserActionLog.js";
+import { authMiddleware, type AuthRequest } from "../middleware/auth";
+import { Resume } from "../models/Resume";
+import { UserActionLog } from "../models/UserActionLog";
 
 export const resumeRouter = Router();
 

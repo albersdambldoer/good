@@ -1,9 +1,9 @@
 import { Router } from "express";
-import { authMiddleware, type AuthRequest } from "../middleware/auth.js";
-import { requireRole } from "../middleware/requireRole.js";
-import { User } from "../models/User.js";
-import { UserActionLog } from "../models/UserActionLog.js";
-import { Resume } from "../models/Resume.js";
+import { authMiddleware, type AuthRequest } from "../middleware/auth";
+import { requireRole } from "../middleware/requireRole";
+import { User } from "../models/User";
+import { UserActionLog } from "../models/UserActionLog";
+import { Resume } from "../models/Resume";
 
 export const adminRouter = Router();
 
