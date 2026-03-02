@@ -9,7 +9,7 @@
     "lint": "echo \"No linter configured\""
   },
   "dependencies": {
-    "bcrypt": "*",
+    "bcryptjs": "^3.0.3",
     "cors": "*",
     "dotenv": "*",
     "express": "*",
@@ -17,7 +17,7 @@
     "mongoose": "*"
   },
   "devDependencies": {
-    "@types/bcrypt": "*",
+    "@types/bcryptjs": "^2.4.6",
     "@types/express": "*",
     "@types/jsonwebtoken": "*",
     "@types/node": "*",

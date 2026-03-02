@@ -14,7 +14,16 @@ export async function api<T>(
   });
 
   if (!res.ok) {
-    throw new Error(`API error ${res.status}`);
+    let message = `Request failed (${res.status})`;
+    try {
+      const body = (await res.json()) as { message?: string };
+      if (body?.message && typeof body.message === "string") {
+        message = body.message;
+      }
+    } catch {
+      // ignore if response is not JSON
+    }
+    throw new Error(message);
   }
 
   return (await res.json()) as T;

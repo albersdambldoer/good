@@ -1,4 +1,4 @@
-import bcrypt from "bcrypt";
+import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
 import { User, type UserDocument } from "../models/User";
 import { env } from "../config/env";
@@ -19,7 +19,7 @@ function createToken(user: UserDocument) {
   if (!env.jwtSecret) {
     throw new Error("JWT_SECRET not configured");
   }
-  return jwt.sign({ userId: user.id, role: user.role }, env.jwtSecret, {
+  return jwt.sign({ userId: String(user._id), role: user.role }, env.jwtSecret, {
     expiresIn: "1h",
   });
 }
