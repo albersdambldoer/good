@@ -83,9 +83,9 @@ const educationSchema = new Schema<Education>(
 const profileSchema = new Schema<Profile>(
   {
     name: { type: String, required: true },
-    headline: { type: String, required: true },
-    location: { type: String, required: true },
-    phone: { type: String, required: true },
+    headline: { type: String, default: "" },
+    location: { type: String, default: "" },
+    phone: { type: String, default: "" },
     social: {
       linkedin: { type: String },
       github: { type: String },
